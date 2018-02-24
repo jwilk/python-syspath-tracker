@@ -9,6 +9,8 @@ import itertools
 import difflib
 import sys
 
+b''  # Python >= 2.6 is required
+
 def lformat(lst):
     return '[\n{0}]'.format(''.join('  {0!r},\n'.format(item) for item in lst))
 
