@@ -1,3 +1,8 @@
+# encoding=UTF-8
+
+# Copyright © 2016-2018 Jakub Wilk <jwilk@jwilk.net>
+# SPDX-License-Identifier: MIT
+
 from __future__ import print_function
 
 import itertools
