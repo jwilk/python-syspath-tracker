@@ -3,6 +3,14 @@
 # Copyright © 2016-2021 Jakub Wilk <jwilk@jwilk.net>
 # SPDX-License-Identifier: MIT
 
+'''
+track who changes sys.path
+
+Usage:
+
+    syspath_tracker.install(file=sys.stderr)
+'''
+
 from __future__ import print_function
 
 import itertools
