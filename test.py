@@ -1,6 +1,6 @@
 # encoding=UTF-8
 
-# Copyright © 2016-2018 Jakub Wilk <jwilk@jwilk.net>
+# Copyright © 2016-2021 Jakub Wilk <jwilk@jwilk.net>
 # SPDX-License-Identifier: MIT
 
 import sys
