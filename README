@@ -1,0 +1,48 @@
+.. code:: console
+
+   $ cat test.py
+   import sys
+   import syspath_tracker
+   syspath_tracker.install()
+   def f():
+       sys.path += ['/eggs']
+   def g():
+       del sys.path[0]
+   f()
+   g()
+
+   $ python test.py
+   Initial sys.path = [
+     '/home/jwilk/python-syspath-tracker',
+     '/usr/lib/python2.7',
+     '/usr/lib/python2.7/plat-i386-linux-gnu',
+     '/usr/lib/python2.7/lib-tk',
+     '/usr/lib/python2.7/lib-old',
+     '/usr/lib/python2.7/lib-dynload',
+     '/usr/local/lib/python2.7/dist-packages',
+     '/usr/lib/python2.7/dist-packages',
+   ]
+   sys.path changed at test.py:5: [
+      '/home/jwilk/python-syspath-tracker',
+      '/usr/lib/python2.7',
+      '/usr/lib/python2.7/plat-i386-linux-gnu',
+      '/usr/lib/python2.7/lib-tk',
+      '/usr/lib/python2.7/lib-old',
+      '/usr/lib/python2.7/lib-dynload',
+      '/usr/local/lib/python2.7/dist-packages',
+      '/usr/lib/python2.7/dist-packages',
+   +  '/eggs',
+    ]
+   sys.path changed at test.py:7: [
+   -  '/home/jwilk/python-syspath-tracker',
+      '/usr/lib/python2.7',
+      '/usr/lib/python2.7/plat-i386-linux-gnu',
+      '/usr/lib/python2.7/lib-tk',
+      '/usr/lib/python2.7/lib-old',
+      '/usr/lib/python2.7/lib-dynload',
+      '/usr/local/lib/python2.7/dist-packages',
+      '/usr/lib/python2.7/dist-packages',
+      '/eggs',
+    ]
+
+.. vim:ft=rst ts=3 sts=3 sw=3 et
