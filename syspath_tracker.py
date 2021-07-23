@@ -14,8 +14,8 @@ b''  # Python >= 2.6 is required
 def lformat(lst):
     return '[\n{0}]'.format(''.join('  {0!r},\n'.format(item) for item in lst))
 
-orig_sys_path = list(sys.path)
-print('Initial sys.path = ' + lformat(sys.path))
+orig_sys_path = None
+
 def trace_sys_path(frame, event, arg):
     global orig_sys_path
     try:
@@ -37,6 +37,12 @@ def trace_sys_path(frame, event, arg):
     orig_sys_path = list(sys_path)
     return trace_sys_path
 
-sys.settrace(trace_sys_path)
+def install():
+    global orig_sys_path
+    orig_sys_path = list(sys.path)
+    print('Initial sys.path = ' + lformat(sys.path))
+    sys.settrace(trace_sys_path)
+
+__all__ = ['install']
 
 # vim:ts=4 sts=4 sw=4 et

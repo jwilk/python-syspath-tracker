@@ -6,8 +6,7 @@
 import sys
 
 import syspath_tracker
-
-del syspath_tracker  # hi, pyflakes!
+syspath_tracker.install()
 
 def f():
     sys.path += ['/eggs']
