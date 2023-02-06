@@ -19,8 +19,11 @@ import sys
 
 b''  # Python >= 2.6 is required
 
+def strjoin(lst):
+    return str.join('', lst)
+
 def lformat(lst):
-    return '[\n{0}]'.format(''.join('  {0!r},\n'.format(item) for item in lst))
+    return '[\n{0}]'.format(strjoin('  {0!r},\n'.format(item) for item in lst))
 
 orig_sys_path = None
 tfile = None
