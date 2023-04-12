@@ -9,12 +9,8 @@ jobs:
         include:
         - python: '2.7'
           os: ubuntu-20.04
-        - python: '3.3'
-          os: ubuntu-18.04
-        - python: '3.4'
-          os: ubuntu-18.04
         - python: '3.5'
-          os: ubuntu-18.04
+          os: ubuntu-20.04
         - python: '3.6'
           os: ubuntu-20.04
         - python: '3.7'
@@ -45,9 +41,7 @@ jobs:
         python -m pydiatra -v .
     - name: run pyflakes
       run: |
-        pyflakes=pyflakes
-        if [[ ${{matrix.python}} = 3.3 ]]; then pyflakes+='<2'; fi
-        python -m pip install $pyflakes
+        python -m pip install pyflakes
         python -m pyflakes .
 
 # vim:ts=2 sts=2 sw=2 et
