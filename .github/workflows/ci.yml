@@ -29,9 +29,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: set up Python ${{matrix.python}}
+      if: matrix.python != '2.7'
       uses: actions/setup-python@v4
       with:
         python-version: ${{matrix.python}}
+    - name: set up Python 2.7 (with APT + get-pip)
+      if: matrix.python == '2.7'
+      run: |
+        sudo apt-get install python-is-python2
+        curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+        sudo python get-pip.py
+        rm get-pip.py
     - name: run tests
       run: |
         python test.py
