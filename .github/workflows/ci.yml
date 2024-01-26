@@ -30,7 +30,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: set up Python ${{matrix.python}}
       if: matrix.python != '2.7'
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: ${{matrix.python}}
     - name: set up Python 2.7 (with APT + get-pip)
