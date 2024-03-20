@@ -13,8 +13,8 @@ Usage:
 
 from __future__ import print_function
 
-import itertools
 import difflib
+import itertools
 import sys
 
 b''  # Python >= 2.6 is required
