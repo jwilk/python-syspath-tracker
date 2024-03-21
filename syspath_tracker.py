@@ -29,6 +29,7 @@ orig_sys_path = None
 tfile = None
 
 def trace_sys_path(frame, event, arg):
+    del event, arg
     global orig_sys_path
     try:
         sys_path = sys.path
